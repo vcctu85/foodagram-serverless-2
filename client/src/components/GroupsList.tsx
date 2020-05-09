@@ -36,7 +36,8 @@ export class GroupsList extends React.PureComponent<GroupsListProps, GroupsListS
   render() {
     return (
       <div>
-        <h1>Food Categories</h1>
+        <h1>Foodagram</h1>
+        <h2>A serverless app to share food images.</h2>
 
         <Button
           primary

@@ -91,7 +91,7 @@ export class CreateImage extends React.PureComponent<
           <Form.Field>
             <label>Caption</label>
             <input
-              placeholder="Image title"
+              placeholder="Image caption"
               value={this.state.title}
               onChange={this.handleTitleChange}
             />

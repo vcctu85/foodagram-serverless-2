@@ -270,7 +270,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-Auth",
         "Handler": "src/lambda/auth/auth0Authorizer.handler",
@@ -321,7 +321,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-GetGroups",
         "Handler": "src/lambda/http/getGroups.handler",
@@ -372,7 +372,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-CreateGroup",
         "Handler": "src/lambda/http/createGroup.handler",
@@ -423,7 +423,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-GetImages",
         "Handler": "src/lambda/http/getImages.handler",
@@ -474,7 +474,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-CreateImage",
         "Handler": "src/lambda/http/createImage.handler",
@@ -525,7 +525,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-SendUploadNotifications",
         "Handler": "src/lambda/s3/sendNotifications.handler",
@@ -580,7 +580,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-ResizeImage",
         "Handler": "src/lambda/s3/resizeImage.handler",
@@ -631,7 +631,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-ConnectHandler",
         "Handler": "src/lambda/websocket/connect.handler",
@@ -682,7 +682,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-DisconnectHandler",
         "Handler": "src/lambda/websocket/disconnect.handler",
@@ -1090,7 +1090,7 @@
         "Type": "TOKEN"
       }
     },
-    "ApiGatewayDeployment1589057501170": {
+    "ApiGatewayDeployment1589063059981": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {

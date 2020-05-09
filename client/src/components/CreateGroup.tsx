@@ -36,7 +36,7 @@ export class CreateGroup extends React.PureComponent<
 
     try {
       if (!this.state.name || !this.state.description) {
-        alert('Name and description should be provided')
+        alert('Name and summary should be provided')
         return
       }
 
@@ -46,7 +46,7 @@ export class CreateGroup extends React.PureComponent<
         description: this.state.description
       })
 
-      console.log('Created description', group)
+      console.log('Created summary', group)
 
       alert('Category was created!')
     } catch (e) {
@@ -65,7 +65,7 @@ export class CreateGroup extends React.PureComponent<
   render() {
     return (
       <div>
-        <h1>Upload new category</h1>
+        <h1>Create new category</h1>
 
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
