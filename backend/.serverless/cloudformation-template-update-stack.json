@@ -178,38 +178,6 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "dynamodb:Scan",
-                    "dynamodb:PutItem",
-                    "dynamodb:GetItem"
-                  ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Groups-dev"
-                },
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "dynamodb:PutItem",
-                    "dynamodb:Query"
-                  ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Images-dev"
-                },
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "dynamodb:Query"
-                  ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Images-dev/index/ImageIdIndex"
-                },
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "s3:PutObject",
-                    "s3:GetObject"
-                  ],
-                  "Resource": "arn:aws:s3:::serverless-foodagram-images-2-dev/*"
-                },
-                {
-                  "Effect": "Allow",
-                  "Action": [
                     "s3:PutObject"
                   ],
                   "Resource": "arn:aws:s3:::serverless-foodagram-thumbnail-2-dev/*"
@@ -270,7 +238,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-Auth",
         "Handler": "src/lambda/auth/auth0Authorizer.handler",
@@ -321,14 +289,14 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-GetGroups",
         "Handler": "src/lambda/http/getGroups.handler",
         "MemorySize": 1024,
         "Role": {
           "Fn::GetAtt": [
-            "IamRoleLambdaExecution",
+            "GetGroupsIamRoleLambdaExecution",
             "Arn"
           ]
         },
@@ -351,8 +319,8 @@
         }
       },
       "DependsOn": [
-        "GetGroupsLogGroup",
-        "IamRoleLambdaExecution"
+        "GetGroupsIamRoleLambdaExecution",
+        "GetGroupsLogGroup"
       ]
     },
     "GetGroupsLambdaVersionkxCzIdygw4dnPZSQN9oSI2yGMUs32PptvHlwjbqjDY": {
@@ -372,14 +340,14 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-CreateGroup",
         "Handler": "src/lambda/http/createGroup.handler",
         "MemorySize": 1024,
         "Role": {
           "Fn::GetAtt": [
-            "IamRoleLambdaExecution",
+            "CreateGroupIamRoleLambdaExecution",
             "Arn"
           ]
         },
@@ -402,8 +370,8 @@
         }
       },
       "DependsOn": [
-        "CreateGroupLogGroup",
-        "IamRoleLambdaExecution"
+        "CreateGroupIamRoleLambdaExecution",
+        "CreateGroupLogGroup"
       ]
     },
     "CreateGroupLambdaVersion8pAhf7i03viZSDiUFAV5Rx9pQRqcECu4IYrpeVtTI": {
@@ -423,7 +391,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-GetImages",
         "Handler": "src/lambda/http/getImages.handler",
@@ -474,14 +442,14 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-CreateImage",
         "Handler": "src/lambda/http/createImage.handler",
         "MemorySize": 1024,
         "Role": {
           "Fn::GetAtt": [
-            "IamRoleLambdaExecution",
+            "CreateImageIamRoleLambdaExecution",
             "Arn"
           ]
         },
@@ -504,8 +472,8 @@
         }
       },
       "DependsOn": [
-        "CreateImageLogGroup",
-        "IamRoleLambdaExecution"
+        "CreateImageIamRoleLambdaExecution",
+        "CreateImageLogGroup"
       ]
     },
     "CreateImageLambdaVersion2p6p4UvGHYYF8YqLgrcmVhMhiuLxPW0aamJcWS1dIF8": {
@@ -525,7 +493,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-SendUploadNotifications",
         "Handler": "src/lambda/s3/sendNotifications.handler",
@@ -580,7 +548,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-ResizeImage",
         "Handler": "src/lambda/s3/resizeImage.handler",
@@ -631,7 +599,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-ConnectHandler",
         "Handler": "src/lambda/websocket/connect.handler",
@@ -682,7 +650,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-food-app/dev/1589063086232-2020-05-09T22:24:46.232Z/serverless-food-app.zip"
+          "S3Key": "serverless/serverless-food-app/dev/1589068007752-2020-05-09T23:46:47.752Z/serverless-food-app.zip"
         },
         "FunctionName": "serverless-food-app-dev-DisconnectHandler",
         "Handler": "src/lambda/websocket/disconnect.handler",
@@ -1090,7 +1058,7 @@
         "Type": "TOKEN"
       }
     },
-    "ApiGatewayDeployment1589063059981": {
+    "ApiGatewayDeployment1589067983694": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1716,6 +1684,171 @@
         }
       }
     },
+    "GetGroupsIamRoleLambdaExecution": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "serverless-food-app-dev",
+                  "lambda"
+                ]
+              ]
+            },
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-food-app-dev-GetGroups:*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:Scan",
+                    "dynamodb:GetItem"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Groups-dev"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "xray:PutTelemetryRecords",
+                    "xray:PutTraceSegments"
+                  ],
+                  "Resource": "*"
+                }
+              ]
+            }
+          }
+        ],
+        "Path": "/",
+        "RoleName": {
+          "Fn::Join": [
+            "-",
+            [
+              "serverless-food-app-dev",
+              {
+                "Ref": "AWS::Region"
+              },
+              "GetGroups",
+              "lambdaRole"
+            ]
+          ]
+        },
+        "ManagedPolicyArns": []
+      }
+    },
+    "CreateGroupIamRoleLambdaExecution": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "serverless-food-app-dev",
+                  "lambda"
+                ]
+              ]
+            },
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-food-app-dev-CreateGroup:*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:Scan",
+                    "dynamodb:PutItem",
+                    "dynamodb:GetItem"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Groups-dev"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "xray:PutTelemetryRecords",
+                    "xray:PutTraceSegments"
+                  ],
+                  "Resource": "*"
+                }
+              ]
+            }
+          }
+        ],
+        "Path": "/",
+        "RoleName": {
+          "Fn::Join": [
+            "-",
+            [
+              "serverless-food-app-dev",
+              {
+                "Ref": "AWS::Region"
+              },
+              "CreateGroup",
+              "lambdaRole"
+            ]
+          ]
+        },
+        "ManagedPolicyArns": []
+      }
+    },
     "GetImagesIamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -1764,6 +1897,16 @@
                 {
                   "Effect": "Allow",
                   "Action": [
+                    "dynamodb:Scan",
+                    "dynamodb:PutItem",
+                    "dynamodb:GetItem"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Groups-dev"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:PutItem",
                     "dynamodb:Query"
                   ],
                   "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Images-dev"
@@ -1771,9 +1914,17 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "dynamodb:GetItem"
+                    "dynamodb:Query"
                   ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Groups-dev"
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Images-dev/index/ImageIdIndex"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "xray:PutTelemetryRecords",
+                    "xray:PutTraceSegments"
+                  ],
+                  "Resource": "*"
                 }
               ]
             }
@@ -1789,6 +1940,112 @@
                 "Ref": "AWS::Region"
               },
               "GetImages",
+              "lambdaRole"
+            ]
+          ]
+        },
+        "ManagedPolicyArns": []
+      }
+    },
+    "CreateImageIamRoleLambdaExecution": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "serverless-food-app-dev",
+                  "lambda"
+                ]
+              ]
+            },
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-food-app-dev-CreateImage:*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:Scan",
+                    "dynamodb:PutItem",
+                    "dynamodb:GetItem"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Groups-dev"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:PutItem",
+                    "dynamodb:Query"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Images-dev"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:Query"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/Food-Images-dev/index/ImageIdIndex"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "xray:PutTelemetryRecords",
+                    "xray:PutTraceSegments"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:PutObject",
+                    "s3:GetObject"
+                  ],
+                  "Resource": "arn:aws:s3:::serverless-foodagram-images-2-dev/*"
+                }
+              ]
+            }
+          }
+        ],
+        "Path": "/",
+        "RoleName": {
+          "Fn::Join": [
+            "-",
+            [
+              "serverless-food-app-dev",
+              {
+                "Ref": "AWS::Region"
+              },
+              "CreateImage",
               "lambdaRole"
             ]
           ]
