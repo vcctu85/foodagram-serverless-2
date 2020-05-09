@@ -29,14 +29,14 @@ export class GroupsList extends React.PureComponent<GroupsListProps, GroupsListS
         groups
       })
     } catch (e) {
-      alert(`Failed to fetch groups: ${e.message}`)
+      alert(`Failed to fetch categories: ${e.message}`)
     }
   }
 
   render() {
     return (
       <div>
-        <h1>Groups</h1>
+        <h1>Food Categories</h1>
 
         <Button
           primary
@@ -44,7 +44,7 @@ export class GroupsList extends React.PureComponent<GroupsListProps, GroupsListS
           className="add-button"
           onClick={this.handleCreateGroup}
         >
-          Create new group
+          Create new category
         </Button>
 
         <Divider clearing />

@@ -48,7 +48,7 @@ export class CreateGroup extends React.PureComponent<
 
       console.log('Created description', group)
 
-      alert('Group was created!')
+      alert('Category was created!')
     } catch (e) {
       alert('Could not upload an image: ' + e.message)
     } finally {
@@ -65,21 +65,21 @@ export class CreateGroup extends React.PureComponent<
   render() {
     return (
       <div>
-        <h1>Upload new group</h1>
+        <h1>Upload new category</h1>
 
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
-            <label>Name</label>
+            <label>Category</label>
             <input
-              placeholder="Group name"
+              placeholder="Category name"
               value={this.state.name}
               onChange={this.handleNameChange}
             />
           </Form.Field>
           <Form.Field>
-            <label>Description</label>
+            <label>Summary</label>
             <input
-              placeholder="Group description"
+              placeholder="Write a one-line summary describing the category."
               value={this.state.description}
               onChange={this.handleDescriptionChange}
             />

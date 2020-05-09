@@ -89,7 +89,7 @@ export class CreateImage extends React.PureComponent<
 
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
-            <label>Title</label>
+            <label>Caption</label>
             <input
               placeholder="Image title"
               value={this.state.title}

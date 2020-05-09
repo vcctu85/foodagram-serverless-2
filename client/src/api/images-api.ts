@@ -33,6 +33,18 @@ export async function createImage(
   return await reply.json()
 }
 
+// export async function deleteImage(
+//   idToken: string,
+//   imageId: string
+// ): Promise<void> {
+//   await Axios.delete(`${apiEndpoint}/groups/${newImage.groupId}/images/${imageId}`, {
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization': `Bearer ${idToken}`
+//     }
+//   })
+// }
+
 export async function uploadFile(uploadUrl: string, file: Buffer): Promise<void> {
   await fetch(uploadUrl, {
     method: 'PUT',
