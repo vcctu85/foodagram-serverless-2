@@ -30,9 +30,9 @@ provider:
     IMAGES_TABLE: Food-Images-${self:provider.stage}
     IMAGE_ID_INDEX: ImageIdIndex
     CONNECTIONS_TABLE: Connections-${self:provider.stage}
-    IMAGES_S3_BUCKET: serverless-foodagram-images-${self:provider.stage}
+    IMAGES_S3_BUCKET: serverless-foodagram-images-2-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
-    THUMBNAILS_S3_BUCKET: serverless-fooddagram-thumbnail-${self:provider.stage}
+    THUMBNAILS_S3_BUCKET: serverless-foodagram-thumbnail-2-${self:provider.stage}
     AUTH_0_SECRET: qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3
 
   iamRoleStatements:
@@ -313,8 +313,10 @@ resources:
             - Sid: PublicReadForGetBucketObjects
               Effect: Allow
               Principal: '*'
-              Action: 's3:GetObject'
-              Resource: 'arn:aws:s3:::${self:provider.environment.IMAGES_S3_BUCKET}/*'
+              Action: 
+                - s3:GetObject
+                - s3:PutObject
+              Resource: arn:aws:s3:::${self:provider.environment.IMAGES_S3_BUCKET}/*
         Bucket: !Ref AttachmentsBucket
 
     SNSTopicPolicy:

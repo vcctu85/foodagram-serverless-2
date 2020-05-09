@@ -1,9 +1,9 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
+import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import 'source-map-support/register'
 import * as AWS  from 'aws-sdk'
 import * as uuid from 'uuid'
-import * as middy from 'middy'
-import { cors } from 'middy/middlewares'
+// import * as middy from 'middy'
+// import { cors } from 'middy/middlewares'
 import * as AWSXRay from 'aws-xray-sdk'
 
 const XAWS = AWSXRay.captureAWS(AWS)
@@ -17,9 +17,10 @@ const s3 = new XAWS.S3({
 const groupsTable = process.env.GROUPS_TABLE
 const imagesTable = process.env.IMAGES_TABLE
 const bucketName = process.env.IMAGES_S3_BUCKET
-const urlExpiration = process.env.SIGNED_URL_EXPIRATION
+// urlExpiration = process.env.SIGNED_URL_EXPIRATION
 
-export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+// export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Caller event', event)
   const groupId = event.pathParameters.groupId
   const validGroupId = await groupExists(groupId)
@@ -27,6 +28,10 @@ export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGat
   if (!validGroupId) {
     return {
       statusCode: 404,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
       body: JSON.stringify({
         error: 'Group does not exist'
       })
@@ -36,22 +41,26 @@ export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGat
   const imageId = uuid.v4()
   const newItem = await createImage(groupId, imageId, event)
 
-  const url = getUploadUrl(imageId)
+  const url = await getUploadUrl(imageId)
 
   return {
     statusCode: 201,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true
+    },
     body: JSON.stringify({
       newItem: newItem,
       uploadUrl: url
     })
   }
-})
+}
 
-handler.use(
-  cors({
-    credentials: true
-  })
-)
+// handler.use(
+//   cors({
+//     credentials: true
+//   })
+// )
 
 async function groupExists(groupId: string) {
   const result = await docClient
@@ -90,10 +99,10 @@ async function createImage(groupId: string, imageId: string, event: any) {
   return newItem
 }
 
-function getUploadUrl(imageId: string) {
-  return s3.getSignedUrl('putObject', {
+async function getUploadUrl(imageId: string) {
+  return await s3.getSignedUrl('putObject', {
     Bucket: bucketName,
     Key: imageId,
-    Expires: urlExpiration
+    Expires: 300
   })
 }

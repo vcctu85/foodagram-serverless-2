@@ -19,9 +19,9 @@
         "IMAGES_TABLE": "Food-Images-dev",
         "IMAGE_ID_INDEX": "ImageIdIndex",
         "CONNECTIONS_TABLE": "Connections-dev",
-        "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+        "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
         "SIGNED_URL_EXPIRATION": 300,
-        "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+        "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
         "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
       },
       "iamRoleStatements": [
@@ -64,14 +64,14 @@
             "s3:PutObject",
             "s3:GetObject"
           ],
-          "Resource": "arn:aws:s3:::serverless-foodagram-images-dev/*"
+          "Resource": "arn:aws:s3:::serverless-foodagram-images-2-dev/*"
         },
         {
           "Effect": "Allow",
           "Action": [
             "s3:PutObject"
           ],
-          "Resource": "arn:aws:s3:::serverless-fooddagram-thumbnail-dev/*"
+          "Resource": "arn:aws:s3:::serverless-foodagram-thumbnail-2-dev/*"
         },
         {
           "Effect": "Allow",
@@ -321,7 +321,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-Auth",
               "Handler": "src/lambda/auth/auth0Authorizer.handler",
@@ -343,9 +343,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -355,14 +355,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AuthLambdaVersion4DRgrroRTibU2Ahk5fghuf6wp1i8YFADM0zdKQpY04": {
+          "AuthLambdaVersionduMJ9w0akQNe3ITb2Ejin4wBaQmEPrTaaOeKEnXY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "GetGroupsLambdaFunction": {
@@ -372,7 +372,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-GetGroups",
               "Handler": "src/lambda/http/getGroups.handler",
@@ -394,9 +394,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -406,14 +406,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetGroupsLambdaVersioncJXxN1P0v1YpGdvKX0cCVfYrsxw96anUbH3FsgHyh38": {
+          "GetGroupsLambdaVersionkxCzIdygw4dnPZSQN9oSI2yGMUs32PptvHlwjbqjDY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetGroupsLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "CreateGroupLambdaFunction": {
@@ -423,7 +423,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-CreateGroup",
               "Handler": "src/lambda/http/createGroup.handler",
@@ -445,9 +445,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -457,14 +457,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateGroupLambdaVersionW2BxZbj1SyKH8p4CYglFC3FyB3OztoL3fC53krNKB6g": {
+          "CreateGroupLambdaVersion8pAhf7i03viZSDiUFAV5Rx9pQRqcECu4IYrpeVtTI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateGroupLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "GetImagesLambdaFunction": {
@@ -474,7 +474,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-GetImages",
               "Handler": "src/lambda/http/getImages.handler",
@@ -496,9 +496,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -508,14 +508,14 @@
               "GetImagesLogGroup"
             ]
           },
-          "GetImagesLambdaVersionQbLueAHkBEaY3rx8lbc4WYKoalDGuwhIH2uQm6Q6U": {
+          "GetImagesLambdaVersionWQSvitnlzZOiJpD9xkn3stHjhNrmlnW5lOV1aXU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetImagesLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "CreateImageLambdaFunction": {
@@ -525,7 +525,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-CreateImage",
               "Handler": "src/lambda/http/createImage.handler",
@@ -547,9 +547,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -559,14 +559,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateImageLambdaVersion7mb58Mv9wOOx0LZEIkRHNzB0xJfZ0AQwV4UjqNwaY": {
+          "CreateImageLambdaVersion2p6p4UvGHYYF8YqLgrcmVhMhiuLxPW0aamJcWS1dIF8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateImageLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "SendUploadNotificationsLambdaFunction": {
@@ -576,7 +576,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-SendUploadNotifications",
               "Handler": "src/lambda/s3/sendNotifications.handler",
@@ -598,9 +598,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3",
                   "STAGE": "dev",
                   "API_ID": {
@@ -614,14 +614,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "SendUploadNotificationsLambdaVersionqXqZUq7OeDn8jdtcczdbomjhVh9m1K3yP9QUZkr2s": {
+          "SendUploadNotificationsLambdaVersionHJy7ZlnPo2LXqZ9K38VUwGCim2WamQQpl9lUdbKfOg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "SendUploadNotificationsLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "ResizeImageLambdaFunction": {
@@ -631,7 +631,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-ResizeImage",
               "Handler": "src/lambda/s3/resizeImage.handler",
@@ -653,9 +653,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -665,14 +665,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ResizeImageLambdaVersionF4tX8kz4xdKODGmxgRUY7tXXgvUfzYu2wzqMQTc": {
+          "ResizeImageLambdaVersionB6AlmvYWh1ae6ejr5BBZHDfbjx3irwIkRfYICGrcOg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ResizeImageLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "ConnectHandlerLambdaFunction": {
@@ -682,7 +682,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-ConnectHandler",
               "Handler": "src/lambda/websocket/connect.handler",
@@ -704,9 +704,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -716,14 +716,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ConnectHandlerLambdaVersionznyW0YdAvFRCMigfhzuHIVORtNjIOAbzgRkfEi1xKfc": {
+          "ConnectHandlerLambdaVersion7LmMlcFd9HTHYR1wWCM5GWCn6W2hq0RQPTbEoofM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ConnectHandlerLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "DisconnectHandlerLambdaFunction": {
@@ -733,7 +733,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z/serverless-food-app.zip"
+                "S3Key": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z/serverless-food-app.zip"
               },
               "FunctionName": "serverless-food-app-dev-DisconnectHandler",
               "Handler": "src/lambda/websocket/disconnect.handler",
@@ -755,9 +755,9 @@
                   "IMAGES_TABLE": "Food-Images-dev",
                   "IMAGE_ID_INDEX": "ImageIdIndex",
                   "CONNECTIONS_TABLE": "Connections-dev",
-                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-dev",
+                  "IMAGES_S3_BUCKET": "serverless-foodagram-images-2-dev",
                   "SIGNED_URL_EXPIRATION": 300,
-                  "THUMBNAILS_S3_BUCKET": "serverless-fooddagram-thumbnail-dev",
+                  "THUMBNAILS_S3_BUCKET": "serverless-foodagram-thumbnail-2-dev",
                   "AUTH_0_SECRET": "qIf8xMPfSJCIydflGjZTHvDhaameOkfs4VuX0-6Eb7sNbylH6MncdZjAN_94VcO3"
                 }
               }
@@ -767,14 +767,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DisconnectHandlerLambdaVersiontgYBGbSPdj2Qmp5BdTqCfmYsr4kqgViQaiuFlzhayxE": {
+          "DisconnectHandlerLambdaVersionbxC270jyCNKbB9ASAmtbjjWpI3dwvXR40kwqxB8IREY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DisconnectHandlerLambdaFunction"
               },
-              "CodeSha256": "iRqcDE83fXItkRa1gNwihIgRsD759a4s+151+jET7/4="
+              "CodeSha256": "0UiZzXbU8Q5pfDdDwtQ8mGEaEd3xSZi2dVSttWcom74="
             }
           },
           "ApiGatewayRestApi": {
@@ -1141,7 +1141,7 @@
               "Type": "TOKEN"
             }
           },
-          "ApiGatewayDeployment1589050718336": {
+          "ApiGatewayDeployment1589057501170": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1747,7 +1747,7 @@
             "Properties": {
               "FunctionVersion": {
                 "Fn::GetAtt": [
-                  "CreateGroupLambdaVersionW2BxZbj1SyKH8p4CYglFC3FyB3OztoL3fC53krNKB6g",
+                  "CreateGroupLambdaVersion8pAhf7i03viZSDiUFAV5Rx9pQRqcECu4IYrpeVtTI",
                   "Version"
                 ]
               },
@@ -1962,7 +1962,7 @@
             "Type": "AWS::S3::Bucket",
             "DependsOn": "SNSTopicPolicy",
             "Properties": {
-              "BucketName": "serverless-foodagram-images-dev",
+              "BucketName": "serverless-foodagram-images-2-dev",
               "NotificationConfiguration": {
                 "TopicConfigurations": [
                   {
@@ -2006,8 +2006,11 @@
                     "Sid": "PublicReadForGetBucketObjects",
                     "Effect": "Allow",
                     "Principal": "*",
-                    "Action": "s3:GetObject",
-                    "Resource": "arn:aws:s3:::serverless-foodagram-images-dev/*"
+                    "Action": [
+                      "s3:GetObject",
+                      "s3:PutObject"
+                    ],
+                    "Resource": "arn:aws:s3:::serverless-foodagram-images-2-dev/*"
                   }
                 ]
               },
@@ -2033,7 +2036,7 @@
                     },
                     "Condition": {
                       "ArnLike": {
-                        "AWS:SourceArn": "arn:aws:s3:::serverless-foodagram-images-dev"
+                        "AWS:SourceArn": "arn:aws:s3:::serverless-foodagram-images-2-dev"
                       }
                     }
                   }
@@ -2049,7 +2052,7 @@
           "ThumbnailsBucket": {
             "Type": "AWS::S3::Bucket",
             "Properties": {
-              "BucketName": "serverless-fooddagram-thumbnail-dev"
+              "BucketName": "serverless-foodagram-thumbnail-2-dev"
             }
           },
           "ImagesTopic": {
@@ -2069,55 +2072,55 @@
           "AuthLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthLambdaVersion4DRgrroRTibU2Ahk5fghuf6wp1i8YFADM0zdKQpY04"
+              "Ref": "AuthLambdaVersionduMJ9w0akQNe3ITb2Ejin4wBaQmEPrTaaOeKEnXY"
             }
           },
           "GetGroupsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetGroupsLambdaVersioncJXxN1P0v1YpGdvKX0cCVfYrsxw96anUbH3FsgHyh38"
+              "Ref": "GetGroupsLambdaVersionkxCzIdygw4dnPZSQN9oSI2yGMUs32PptvHlwjbqjDY"
             }
           },
           "CreateGroupLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateGroupLambdaVersionW2BxZbj1SyKH8p4CYglFC3FyB3OztoL3fC53krNKB6g"
+              "Ref": "CreateGroupLambdaVersion8pAhf7i03viZSDiUFAV5Rx9pQRqcECu4IYrpeVtTI"
             }
           },
           "GetImagesLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetImagesLambdaVersionQbLueAHkBEaY3rx8lbc4WYKoalDGuwhIH2uQm6Q6U"
+              "Ref": "GetImagesLambdaVersionWQSvitnlzZOiJpD9xkn3stHjhNrmlnW5lOV1aXU"
             }
           },
           "CreateImageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateImageLambdaVersion7mb58Mv9wOOx0LZEIkRHNzB0xJfZ0AQwV4UjqNwaY"
+              "Ref": "CreateImageLambdaVersion2p6p4UvGHYYF8YqLgrcmVhMhiuLxPW0aamJcWS1dIF8"
             }
           },
           "SendUploadNotificationsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SendUploadNotificationsLambdaVersionqXqZUq7OeDn8jdtcczdbomjhVh9m1K3yP9QUZkr2s"
+              "Ref": "SendUploadNotificationsLambdaVersionHJy7ZlnPo2LXqZ9K38VUwGCim2WamQQpl9lUdbKfOg"
             }
           },
           "ResizeImageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ResizeImageLambdaVersionF4tX8kz4xdKODGmxgRUY7tXXgvUfzYu2wzqMQTc"
+              "Ref": "ResizeImageLambdaVersionB6AlmvYWh1ae6ejr5BBZHDfbjx3irwIkRfYICGrcOg"
             }
           },
           "ConnectHandlerLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ConnectHandlerLambdaVersionznyW0YdAvFRCMigfhzuHIVORtNjIOAbzgRkfEi1xKfc"
+              "Ref": "ConnectHandlerLambdaVersion7LmMlcFd9HTHYR1wWCM5GWCn6W2hq0RQPTbEoofM"
             }
           },
           "DisconnectHandlerLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DisconnectHandlerLambdaVersiontgYBGbSPdj2Qmp5BdTqCfmYsr4kqgViQaiuFlzhayxE"
+              "Ref": "DisconnectHandlerLambdaVersionbxC270jyCNKbB9ASAmtbjjWpI3dwvXR40kwqxB8IREY"
             }
           },
           "ServiceEndpoint": {
@@ -2303,7 +2306,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AuthLambdaVersion4DRgrroRTibU2Ahk5fghuf6wp1i8YFADM0zdKQpY04"
+        "versionLogicalId": "AuthLambdaVersionduMJ9w0akQNe3ITb2Ejin4wBaQmEPrTaaOeKEnXY"
       },
       "GetGroups": {
         "handler": "src/lambda/http/getGroups.handler",
@@ -2343,7 +2346,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GetGroupsLambdaVersioncJXxN1P0v1YpGdvKX0cCVfYrsxw96anUbH3FsgHyh38"
+        "versionLogicalId": "GetGroupsLambdaVersionkxCzIdygw4dnPZSQN9oSI2yGMUs32PptvHlwjbqjDY"
       },
       "CreateGroup": {
         "handler": "src/lambda/http/createGroup.handler",
@@ -2403,7 +2406,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateGroupLambdaVersionW2BxZbj1SyKH8p4CYglFC3FyB3OztoL3fC53krNKB6g"
+        "versionLogicalId": "CreateGroupLambdaVersion8pAhf7i03viZSDiUFAV5Rx9pQRqcECu4IYrpeVtTI"
       },
       "GetImages": {
         "handler": "src/lambda/http/getImages.handler",
@@ -2451,7 +2454,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GetImagesLambdaVersionQbLueAHkBEaY3rx8lbc4WYKoalDGuwhIH2uQm6Q6U"
+        "versionLogicalId": "GetImagesLambdaVersionWQSvitnlzZOiJpD9xkn3stHjhNrmlnW5lOV1aXU"
       },
       "CreateImage": {
         "handler": "src/lambda/http/createImage.handler",
@@ -2510,7 +2513,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateImageLambdaVersion7mb58Mv9wOOx0LZEIkRHNzB0xJfZ0AQwV4UjqNwaY"
+        "versionLogicalId": "CreateImageLambdaVersion2p6p4UvGHYYF8YqLgrcmVhMhiuLxPW0aamJcWS1dIF8"
       },
       "SendUploadNotifications": {
         "environment": {
@@ -2550,7 +2553,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "SendUploadNotificationsLambdaVersionqXqZUq7OeDn8jdtcczdbomjhVh9m1K3yP9QUZkr2s"
+        "versionLogicalId": "SendUploadNotificationsLambdaVersionHJy7ZlnPo2LXqZ9K38VUwGCim2WamQQpl9lUdbKfOg"
       },
       "ResizeImage": {
         "handler": "src/lambda/s3/resizeImage.handler",
@@ -2584,7 +2587,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ResizeImageLambdaVersionF4tX8kz4xdKODGmxgRUY7tXXgvUfzYu2wzqMQTc"
+        "versionLogicalId": "ResizeImageLambdaVersionB6AlmvYWh1ae6ejr5BBZHDfbjx3irwIkRfYICGrcOg"
       },
       "ConnectHandler": {
         "handler": "src/lambda/websocket/connect.handler",
@@ -2603,7 +2606,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ConnectHandlerLambdaVersionznyW0YdAvFRCMigfhzuHIVORtNjIOAbzgRkfEi1xKfc"
+        "versionLogicalId": "ConnectHandlerLambdaVersion7LmMlcFd9HTHYR1wWCM5GWCn6W2hq0RQPTbEoofM"
       },
       "DisconnectHandler": {
         "handler": "src/lambda/websocket/disconnect.handler",
@@ -2622,7 +2625,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "DisconnectHandlerLambdaVersiontgYBGbSPdj2Qmp5BdTqCfmYsr4kqgViQaiuFlzhayxE"
+        "versionLogicalId": "DisconnectHandlerLambdaVersionbxC270jyCNKbB9ASAmtbjjWpI3dwvXR40kwqxB8IREY"
       }
     },
     "resources": {
@@ -2742,7 +2745,7 @@
           "Type": "AWS::S3::Bucket",
           "DependsOn": "SNSTopicPolicy",
           "Properties": {
-            "BucketName": "serverless-foodagram-images-dev",
+            "BucketName": "serverless-foodagram-images-2-dev",
             "NotificationConfiguration": {
               "TopicConfigurations": [
                 {
@@ -2786,8 +2789,11 @@
                   "Sid": "PublicReadForGetBucketObjects",
                   "Effect": "Allow",
                   "Principal": "*",
-                  "Action": "s3:GetObject",
-                  "Resource": "arn:aws:s3:::serverless-foodagram-images-dev/*"
+                  "Action": [
+                    "s3:GetObject",
+                    "s3:PutObject"
+                  ],
+                  "Resource": "arn:aws:s3:::serverless-foodagram-images-2-dev/*"
                 }
               ]
             },
@@ -2813,7 +2819,7 @@
                   },
                   "Condition": {
                     "ArnLike": {
-                      "AWS:SourceArn": "arn:aws:s3:::serverless-foodagram-images-dev"
+                      "AWS:SourceArn": "arn:aws:s3:::serverless-foodagram-images-2-dev"
                     }
                   }
                 }
@@ -2829,7 +2835,7 @@
         "ThumbnailsBucket": {
           "Type": "AWS::S3::Bucket",
           "Properties": {
-            "BucketName": "serverless-fooddagram-thumbnail-dev"
+            "BucketName": "serverless-foodagram-thumbnail-2-dev"
           }
         },
         "ImagesTopic": {
@@ -2847,7 +2853,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-food-app/dev/1589050770330-2020-05-09T18:59:30.330Z",
+    "artifactDirectoryName": "serverless/serverless-food-app/dev/1589057527019-2020-05-09T20:52:07.019Z",
     "artifact": ""
   }
 }
