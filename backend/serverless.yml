@@ -22,7 +22,7 @@ provider:
     apiGateway: true
 
   environment:
-    GROUPS_TABLE: Food-Groups-${self:provider.stage}
+    GROUPS_TABLE: Food-Categories-2-${self:provider.stage}
     IMAGES_TABLE: Food-Images-${self:provider.stage}
     IMAGE_ID_INDEX: ImageIdIndex
     CONNECTIONS_TABLE: Connections-${self:provider.stage}
@@ -229,9 +229,13 @@ resources:
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
+          - AttributeName: timestamp
+            AttributeType: S
         KeySchema:
           - AttributeName: id
             KeyType: HASH
+          - AttributeName: timestamp
+            KeyType: RANGE
         BillingMode: PAY_PER_REQUEST
         TableName: ${self:provider.environment.GROUPS_TABLE}
 
