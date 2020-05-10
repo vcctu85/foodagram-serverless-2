@@ -63,8 +63,8 @@ custom:
     api:
       info:
         version: v1.0.0
-        title: Udagram API
-        description: Serverless application for images sharing
+        title: Foodagram API
+        description: Serverless application for sharing food images
     models:
       - name: GroupRequest
         contentType: application/json
