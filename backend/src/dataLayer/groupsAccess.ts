@@ -3,7 +3,8 @@ import { DocumentClient } from 'aws-sdk/clients/dynamodb'
 
 
 import { Group } from '../models/Group'
-
+import { createLogger } from '../utils/logger'
+const logger = createLogger("groupsAccess")
 export class GroupAccess {
 
   constructor(
@@ -13,7 +14,7 @@ export class GroupAccess {
 
   async getAllGroups(): Promise<Group[]> {
     console.log('Getting all groups')
-
+    logger.info("getting all groups")
     const result = await this.docClient.scan({
       TableName: this.groupsTable
     }).promise()
@@ -23,6 +24,7 @@ export class GroupAccess {
   }
 
   async createGroup(group: Group): Promise<Group> {
+    logger.info("creating a group")
     await this.docClient.put({
       TableName: this.groupsTable,
       Item: group

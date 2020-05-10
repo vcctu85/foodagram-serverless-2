@@ -6,13 +6,14 @@ const docClient = new AWS.DynamoDB.DocumentClient()
 
 const groupsTable = process.env.GROUPS_TABLE
 const imagesTable = process.env.IMAGES_TABLE
-
+import { createLogger } from '../../utils/logger'
+const logger = createLogger("createImage")
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
   console.log('Caller event', event)
   const groupId = event.pathParameters.groupId
   const validGroupId = await groupExists(groupId)
-
+  logger.info("validGroupId", validGroupId)
   if (!validGroupId) {
     return {
       statusCode: 404,
@@ -25,7 +26,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
       })
     }
   }
-
+  logger.info("getting images per group")
   const images = await getImagesPerGroup(groupId)
 
   return {
