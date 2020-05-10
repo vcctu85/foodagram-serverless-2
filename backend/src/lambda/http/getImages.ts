@@ -5,9 +5,10 @@ import * as AWS  from 'aws-sdk'
 const docClient = new AWS.DynamoDB.DocumentClient()
 
 const groupsTable = process.env.GROUPS_TABLE
-const imagesTable = process.env.IMAGES_TABLE
+// const imagesTable = process.env.IMAGES_TABLE
 import { createLogger } from '../../utils/logger'
 const logger = createLogger("createImage")
+import { getImagesPerGroup} from '../../businessLogic/images'
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
   console.log('Caller event', event)
@@ -55,15 +56,15 @@ async function groupExists(groupId: string) {
   return !!result.Item
 }
 
-async function getImagesPerGroup(groupId: string) {
-  const result = await docClient.query({
-    TableName: imagesTable,
-    KeyConditionExpression: 'groupId = :groupId',
-    ExpressionAttributeValues: {
-      ':groupId': groupId
-    },
-    ScanIndexForward: false
-  }).promise()
+// async function getImagesPerGroup(groupId: string) {
+//   const result = await docClient.query({
+//     TableName: imagesTable,
+//     KeyConditionExpression: 'groupId = :groupId',
+//     ExpressionAttributeValues: {
+//       ':groupId': groupId
+//     },
+//     ScanIndexForward: false
+//   }).promise()
 
-  return result.Items
-}
+//   return result.Items
+// }

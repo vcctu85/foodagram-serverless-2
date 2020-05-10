@@ -2,20 +2,18 @@ import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } f
 import 'source-map-support/register'
 import * as AWS  from 'aws-sdk'
 import * as uuid from 'uuid'
-import * as AWSXRay from 'aws-xray-sdk'
-
-const XAWS = AWSXRay.captureAWS(AWS)
+// import * as AWSXRay from 'aws-xray-sdk'
+import { createImage, getUploadUrl } from '../../businessLogic/images'
+// const XAWS = AWSXRay.captureAWS(AWS)
 import { createLogger } from '../../utils/logger'
 const logger = createLogger("createImage")
 
 const docClient = new AWS.DynamoDB.DocumentClient()
-const s3 = new XAWS.S3({
-  signatureVersion: 'v4'
-})
+
 
 const groupsTable = process.env.GROUPS_TABLE
-const imagesTable = process.env.IMAGES_TABLE
-const bucketName = process.env.IMAGES_S3_BUCKET
+// const imagesTable = process.env.IMAGES_TABLE
+// const bucketName = process.env.IMAGES_S3_BUCKET
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Caller event', event)
@@ -68,35 +66,4 @@ async function groupExists(groupId: string) {
 
   console.log('Get group: ', result)
   return !!result.Item
-}
-
-async function createImage(groupId: string, imageId: string, event: any) {
-  const timestamp = new Date().toISOString()
-  const newImage = JSON.parse(event.body)
-  logger.info("Creating new item")
-  const newItem = {
-    groupId,
-    timestamp,
-    imageId,
-    ...newImage,
-    imageUrl: `https://${bucketName}.s3.amazonaws.com/${imageId}`
-  }
-  console.log('Storing new item: ', newItem)
-
-  await docClient
-    .put({
-      TableName: imagesTable,
-      Item: newItem
-    })
-    .promise()
-
-  return newItem
-}
-
-async function getUploadUrl(imageId: string) {
-  return await s3.getSignedUrl('putObject', {
-    Bucket: bucketName,
-    Key: imageId,
-    Expires: 300
-  })
 }

@@ -1,10 +1,11 @@
 import * as AWS  from 'aws-sdk'
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
-
-
+const docClient = new AWS.DynamoDB.DocumentClient()
+const imagesTable = process.env.IMAGES_TABLE
 import { Group } from '../models/Group'
 import { createLogger } from '../utils/logger'
 const logger = createLogger("groupsAccess")
+const imageIdIndex = process.env.IMAGE_ID_INDEX
 export class GroupAccess {
 
   constructor(
@@ -32,6 +33,53 @@ export class GroupAccess {
 
     return group
   }
+}
+
+export async function putItem(newItem) {
+  await docClient
+      .put({
+      TableName: imagesTable,
+      Item: newItem
+      }).promise();
+
+  return newItem;
+}
+
+export async function deleteItem(groupId: string, imageId: string) {
+  const deletedItem = await docClient.delete({
+      TableName: imagesTable,
+      Key: {
+        groupId: groupId,
+        imageId: imageId
+      }
+    }).promise();
+  return deletedItem;
+}
+
+export async function getItems(groupId: string) {
+  const result = await docClient.query({
+    TableName: imagesTable,
+    KeyConditionExpression: 'groupId = :groupId',
+    ExpressionAttributeValues: {
+      ':groupId': groupId
+    },
+    ScanIndexForward: false
+  }).promise()
+
+  return result.Items
+}
+
+export async function getItem(groupId: string, imageId: string) {
+  const result = await docClient.query({
+    TableName : imagesTable,
+    IndexName : imageIdIndex,
+    KeyConditionExpression: 'groupId = :groupId and imageId = :imageId',
+    ExpressionAttributeValues: {
+        ':groupId': groupId,
+        ':imageId': imageId
+    }
+  }).promise()
+  return result;
 }
 
 function createDynamoDBClient() {
